@@ -1,4 +1,5 @@
 import React from "react"
+import { motion } from "framer-motion"
 import {
   GrFacebookOption,
   GrInstagram,
@@ -6,21 +7,32 @@ import {
   GrTwitter,
 } from "react-icons/gr"
 
+const SocialLink = ({ children }) => {
+  return (
+    <motion.li
+      className="border-2 rounded-full border-clr2 p-3 text-clr3 cursor-pointer hover:bg-clr3 hover:text-clr2 hover:border-clr3"
+      whileHover={{ scale: 1.1, rotate: 360 }}
+    >
+      {children}
+    </motion.li>
+  )
+}
+
 const SocialLinks = () => {
   return (
     <ul className="flex align-center gap-10 py-10">
-      <li className="border-2 rounded-full border-clr2 p-3 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer">
+      <SocialLink>
         <GrFacebookOption />
-      </li>
-      <li className="border-2 rounded-full border-clr2 p-3 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer">
+      </SocialLink>
+      <SocialLink>
         <GrInstagram />
-      </li>
-      <li className="border-2 rounded-full border-clr2 p-3 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer">
+      </SocialLink>
+      <SocialLink>
         <GrLinkedinOption />
-      </li>
-      <li className="border-2 rounded-full border-clr2 p-3 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer">
+      </SocialLink>
+      <SocialLink>
         <GrTwitter />
-      </li>
+      </SocialLink>
     </ul>
   )
 }
