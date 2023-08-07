@@ -4,3 +4,37 @@
 
 
 
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4a4a4a;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* For Firefox */
+/* Note: The custom scrollbar styles for Firefox require Gecko engine (not supported in all versions). */
+/* You can also use -moz-scrollbar for older versions of Firefox */
+/* Make sure to test in different versions of Firefox for compatibility. */
+* {
+    scrollbar-color: #4a4a4a #f2f2f2;
+    scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #253031;
+    border-radius: 8px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
