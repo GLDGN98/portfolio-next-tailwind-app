@@ -13,6 +13,7 @@ const ProjectCard = ({ desc, title, imgSrc }) => {
       <img
         src={imgSrc}
         width={400}
+        height={230}
         className="rounded-xl"
         alt="Project Image"
       />

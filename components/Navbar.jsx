@@ -1,21 +1,28 @@
 "use client"
-import React, { useState } from "react"
-import { Link as ScrollLink } from "react-scroll"
-import { motion, AnimatePresence } from "framer-motion"
-import { RxHamburgerMenu } from "react-icons/rx"
-import { Inter } from "next/font/google"
-const inter = Inter({ subsets: ["latin"] })
+import React, { useState } from "react";
+import { Link } from "react-scroll";
+import { motion, AnimatePresence } from "framer-motion";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false) // State for mobile menu toggle
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleMenuClick = () => {
-    setIsMenuOpen((prev) => !prev)
-  }
+    setIsMenuOpen((prev) => !prev);
+  };
 
   const handleNavLinkClick = () => {
-    setIsMenuOpen(false)
-  }
+    setIsMenuOpen(false);
+  };
+
+  const navItems = [
+    { id: "home", name: "Home" },
+    { id: "services", name: "Services" },
+    { id: "projects", name: "Projects" },
+    { id: "contact", name: "Contact" },
+  ];
 
   return (
     <header className="py-4">
@@ -30,54 +37,21 @@ const Navbar = () => {
           </motion.div>
         </div>
         <div className={`hidden sm:flex ${inter.className}`}>
-          <ScrollLink
-            to="home"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="link cursor-pointer px-6 relative group hover:text-clr1"
-            onClick={handleNavLinkClick}
-          >
-            Home
-            <span className="border-b-2 border-transparent absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2/3 transition-all duration-700 ease-out group-hover:w-full group-hover:border-clr1" />
-          </ScrollLink>
-          <ScrollLink
-            to="services"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="link cursor-pointer px-6 relative group hover:text-clr1"
-            onClick={handleNavLinkClick}
-          >
-            Services
-            <span className="border-b-2 border-transparent absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2/3 transition-all duration-700 ease-out group-hover:w-full group-hover:border-clr1" />
-          </ScrollLink>
-          <ScrollLink
-            to="projects"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="link cursor-pointer px-6 relative group hover:text-clr1"
-            onClick={handleNavLinkClick}
-          >
-            Projects
-            <span className="border-b-2 border-transparent absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2/3 transition-all duration-700 ease-out group-hover:w-full group-hover:border-clr1" />
-          </ScrollLink>
-          <ScrollLink
-            to="contact"
-            spy={true}
-            smooth={true}
-            offset={-70}
-            duration={500}
-            className="link cursor-pointer px-6 relative group hover:text-clr1"
-            onClick={handleNavLinkClick}
-          >
-            Contact
-            <span className="border-b-2 border-transparent absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2/3 transition-all duration-700 ease-out group-hover:w-full group-hover:border-clr1" />
-          </ScrollLink>
+          {navItems.map((item) => (
+            <Link
+              key={item.id}
+              to={item.id}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              className="link cursor-pointer px-6 relative group hover:text-clr1"
+              onClick={handleNavLinkClick}
+            >
+              {item.name}
+              <span className="border-b-2 border-transparent absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-2/3 transition-all duration-700 ease-out group-hover:w-full group-hover:border-clr1" />
+            </Link>
+          ))}
         </div>
         <div className="sm:hidden" onClick={handleMenuClick}>
           <RxHamburgerMenu />
@@ -93,57 +67,27 @@ const Navbar = () => {
               id="mobile-menu"
             >
               <div className="space-y-1 px-2 pb-3 pt-2">
-                <ScrollLink
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="hover:bg-clr1 text-clr3 block rounded-md px-3 py-2 text-base"
-                  onClick={handleNavLinkClick}
-                >
-                  Home
-                </ScrollLink>
-                <ScrollLink
-                  to="services"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="hover:bg-clr1 text-clr3 hover:text-white block rounded-md px-3 py-2 text-base"
-                  onClick={handleNavLinkClick}
-                >
-                  Services
-                </ScrollLink>
-                <ScrollLink
-                  to="projects"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="text-clr3 hover:bg-clr1 hover:text-white block rounded-md px-3 py-2 text-base"
-                  onClick={handleNavLinkClick}
-                >
-                  Projects
-                </ScrollLink>
-                <ScrollLink
-                  to="contact"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="text-clr3 hover:bg-clr1 hover:text-white block rounded-md px-3 py-2 text-base"
-                  onClick={handleNavLinkClick}
-                >
-                  Contact
-                </ScrollLink>
+                {navItems.map((item) => (
+                  <Link
+                    key={item.id}
+                    to={item.id}
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={500}
+                    className="hover:bg-clr1 text-clr3 block rounded-md px-3 py-2 text-base"
+                    onClick={handleNavLinkClick}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

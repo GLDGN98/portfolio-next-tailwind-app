@@ -96,6 +96,7 @@ const Home = () => {
               src="/last-one-img.webp"
               width={458}
               height={600}
+              alt="my-image"
             />
           </motion.div>
         )}
