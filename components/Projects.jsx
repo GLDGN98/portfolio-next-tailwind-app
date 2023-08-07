@@ -35,6 +35,39 @@ const Projects = () => {
     }
   }, [headerControls, cardControls, projectsInView])
 
+  const projectData = [
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-7-min.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-2-min.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-4-min.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-6-min.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-5-min.jpg",
+    },
+    {
+      title: "Web Design",
+      desc: "just a random for now",
+      imgSrc: "/coding-3-min.jpg",
+    },
+  ]
+
   return (
     <Element name="projects">
       <div
@@ -51,36 +84,14 @@ const Projects = () => {
             initial={{ opacity: 0 }}
             animate={cardControls}
           >
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-7-min.jpg"}
-            />
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-2-min.jpg"}
-            />
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-4-min.jpg"}
-            />
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-6-min.jpg"}
-            />
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-5-min.jpg"}
-            />
-            <ProjectCard
-              title="Web Design"
-              desc="just a random for now"
-              imgSrc={"/coding-3-min.jpg"}
-            />
+            {projectData.map((project, index) => (
+              <ProjectCard
+                key={index}
+                title={project.title}
+                desc={project.desc}
+                imgSrc={project.imgSrc}
+              />
+            ))}
           </motion.ul>
         </div>
       </div>
