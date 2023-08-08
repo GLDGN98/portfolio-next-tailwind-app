@@ -106,7 +106,7 @@ const Contact = () => {
                 id="grid-first-name"
                 type="text"
                 name="first_name"
-                placeholder="Jane"
+                placeholder="Eilon"
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -121,7 +121,7 @@ const Contact = () => {
                 id="grid-last-name"
                 type="text"
                 name="last_name"
-                placeholder="Doe"
+                placeholder="Drori"
               />
             </div>
           </div>
