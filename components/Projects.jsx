@@ -81,7 +81,7 @@ const Projects = () => {
         </motion.div>
         <div className="my-20" ref={projectsRef}>
           <motion.ul
-            className="flex flex-wrap sm:gap-5 2xl:gap-10 items-center justify-center m-auto"
+            className="flex flex-wrap sm:gap-3 lg:gap-5 2xl:gap-10 items-center justify-center m-auto"
             initial={{ opacity: 0 }}
             animate={cardControls}
           >
