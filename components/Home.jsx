@@ -1,16 +1,48 @@
-import React, { useState } from "react"
-import { Waypoint } from "react-waypoint"
+"use client"
 import { motion } from "framer-motion"
 import SocialLinks from "@/components/SocialLinks"
 import ResponsiveImage from "@/components/Image"
-import Typewriter from "typewriter-effect"
+import { useEffect, useState } from "react"
 
 const Home = () => {
-  const [isAnimated, setIsAnimated] = useState(false)
+  const [currentTextIndex, setCurrentTextIndex] = useState(0)
+  const [displayText, setDisplayText] = useState("")
+  const [cursorVisible, setCursorVisible] = useState(true) // Track cursor visibility
+  const textOptions = [
+    "Frontend Developer",
+    "Fullstack Developer",
+    "Freelancer",
+    "Web Developer",
+  ]
 
-  const handleWaypointEnter = () => {
-    setIsAnimated(true)
-  }
+  useEffect(() => {
+    let interval
+    if (currentTextIndex < textOptions.length) {
+      const text = textOptions[currentTextIndex]
+      interval = setInterval(() => {
+        if (displayText.length < text.length) {
+          setDisplayText(text.substring(0, displayText.length + 1))
+        } else {
+          clearInterval(interval)
+          setTimeout(() => {
+            setDisplayText("")
+            setCurrentTextIndex(
+              (prevIndex) => (prevIndex + 1) % textOptions.length
+            )
+          }, 1000) // Delay before moving to the next text
+        }
+      }, 200) // Speed of typewriter effect
+    }
+    return () => clearInterval(interval)
+  }, [currentTextIndex, displayText])
+
+  // Toggle cursor visibility
+  useEffect(() => {
+    const cursorInterval = setInterval(() => {
+      setCursorVisible((prev) => !prev)
+    }, 500) // Blink every 500ms
+    return () => clearInterval(cursorInterval)
+  }, [])
 
   const handleDownload = () => {
     // Replace the URL with the correct path to your PDF file
@@ -26,10 +58,9 @@ const Home = () => {
 
   return (
     <main className="flex flex-col md:flex md:flex-row items-center justify-center mt-16 md:mt-0">
-      <Waypoint onEnter={handleWaypointEnter} />
       <motion.div
         initial={{ y: -100, opacity: 0 }}
-        animate={isAnimated ? { y: 0, opacity: 1 } : {}}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
         className="text-left text-clr2 tracking-wide"
       >
@@ -40,33 +71,25 @@ const Home = () => {
         <h2 className="text-xl xl:text-5xl lg:text-3xl md:text-xl flex flex-row items-baseline md:items-start gap-2 md:gap-3">
           And I'm a
           <span style={{ color: "#BCAB79" }}>
-            <Typewriter
-              options={{
-                strings: [
-                  "Frontend Developer",
-                  "Fullstack Developer",
-                  "Freelancer",
-                  "Web Developer",
-                ],
-                autoStart: true,
-                loop: true,
-              }}
-            />
+            {displayText}
+            {/* Display the blinking cursor */}
+            {cursorVisible && <span className="cursor">|</span>}
           </span>
         </h2>
 
         <br />
-        <p className="lg:text-2xl xl:text-3xl text-lg">
-          A passionate and creative frontend developer, bringing life to the web
-          one line of code at a time. I love crafting stunning and intuitive
-          user experiences that make the web a better place.
+        <p className="lg:text-2xl xl:text-3xl text-lg md:w-5/6">
+          Frontend Developer with strong problem-solving abilities and a passion
+          for creating impactful web applications. Collaborative team player
+          with excellent communication and software design pattern knowledge.
+          Proven experience in building web applications from scratch and
+          optimizing for performance. Independent and proactive decision-maker,
+          committed to delivering exceptional result.
         </p>
         <SocialLinks />
         <motion.button
           onClick={handleDownload}
           whileHover={{ scale: 1.1 }}
-          onHoverStart={(e) => {}}
-          onHoverEnd={(e) => {}}
           whileTap={{ scale: 1.2 }}
           className={`border-2 font-medium rounded-lg hover:font-semibold border-clr2 p-5 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer tracking-wide w-full md:w-max`}
         >
@@ -76,30 +99,28 @@ const Home = () => {
 
       <motion.div
         initial={{ y: 100, opacity: 0 }}
-        animate={isAnimated ? { y: 0, opacity: 1 } : {}}
+        animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.5 }}
         className="md:w-full md:flex md:items-center md:justify-center mt-1"
       >
-        {isAnimated && (
-          <motion.div
-            initial={{ y: -10 }}
-            animate={{ y: 10 }}
-            transition={{
-              repeat: Infinity,
-              duration: 2,
-              repeatType: "reverse",
-            }}
-            className="md:mt-0 mt-10"
-          >
-            <ResponsiveImage
-              className="bg-gradient-to-r from-clr1 to-clr2 rounded-full p-2 shadow-lg shadow-cyan-500/60"
-              src="/last-one-img.webp"
-              width={458}
-              height={600}
-              alt="my-image"
-            />
-          </motion.div>
-        )}
+        <motion.div
+          initial={{ y: -10 }}
+          animate={{ y: 10 }}
+          transition={{
+            repeat: Infinity,
+            duration: 2,
+            repeatType: "reverse",
+          }}
+          className="md:mt-0 mt-10"
+        >
+          <ResponsiveImage
+            className="bg-gradient-to-r from-clr1 to-clr2 rounded-full p-2 shadow-lg shadow-cyan-500/60"
+            src="/last-one-img.webp"
+            width={458}
+            height={600}
+            alt="my-image"
+          />
+        </motion.div>
       </motion.div>
     </main>
   )

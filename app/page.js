@@ -12,9 +12,7 @@ const MainApp = () => {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 500)
+    setIsLoading(false)
   }, [])
 
   return (
@@ -54,7 +52,6 @@ const MainApp = () => {
           </div>
         </>
       )}
-      {/* Add the ScrollToTopButton component here */}
       <ScrollToTopButton />
     </main>
   )
