@@ -99,7 +99,7 @@ const Navbar = () => {
               animate={{ scaleY: 1, opacity: 1, y: 0 }} // Slide to bottom
               exit={{ scaleY: 0, opacity: 0, y: -100 }} // Slide back to top
               transition={{ duration: 0.3 }}
-              className={`sm:hidden absolute  right-0 top-8 bg-primary text-center rounded-xl w-full ${inter.className}`}
+              className={`sm:hidden border-b-2 border-clr3 absolute  right-0 top-8 bg-primary text-center rounded-xl w-full ${inter.className}`}
               id="mobile-menu"
             >
               <div className="space-y-1 px-2 pb-3 pt-2">
