@@ -4,6 +4,7 @@ import { motion, useAnimation } from "framer-motion"
 import ProjectCard from "@/components/ProjectCard"
 import { Element } from "react-scroll"
 import { useInView } from "react-intersection-observer"
+import { prefix } from "@/prefix"
 
 const Projects = () => {
   const headerControls = useAnimation()
@@ -39,32 +40,32 @@ const Projects = () => {
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-7-min.jpg",
+      imgSrc: `${prefix}/coding-7-min.jpg`,
     },
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-2-min.jpg",
+      imgSrc: `${prefix}/coding-2-min.jpg`,
     },
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-4-min.jpg",
+      imgSrc: `${prefix}/coding-4-min.jpg`,
     },
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-6-min.jpg",
+      imgSrc: `${prefix}/coding-6-min.jpg`,
     },
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-5-min.jpg",
+      imgSrc: `${prefix}/coding-5-min.jpg`,
     },
     {
       title: "Web Design",
       desc: "just a random for now",
-      imgSrc: "/coding-3-min.jpg",
+      imgSrc: `${prefix}/coding-3-min.jpg`,
     },
   ]
 

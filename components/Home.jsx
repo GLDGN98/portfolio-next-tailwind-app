@@ -3,6 +3,7 @@ import { motion } from "framer-motion"
 import SocialLinks from "@/components/SocialLinks"
 import ResponsiveImage from "@/components/Image"
 import { useEffect, useState } from "react"
+import { prefix } from "@/prefix"
 
 const Home = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
@@ -115,7 +116,7 @@ const Home = () => {
         >
           <ResponsiveImage
             className="bg-gradient-to-r from-clr1 to-clr2 rounded-full p-2 shadow-lg shadow-cyan-500/60"
-            src="/last-one-img.webp"
+            src={`${prefix}/last-one-img.webp`}
             width={458}
             height={600}
             alt="my-image"
