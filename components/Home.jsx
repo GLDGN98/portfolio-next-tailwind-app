@@ -2,8 +2,9 @@
 import { motion } from "framer-motion"
 import SocialLinks from "@/components/SocialLinks"
 import ResponsiveImage from "@/components/Image"
+import { Inter } from "@next/font/google"
 import { useEffect, useState } from "react"
-import { prefix } from "@/prefix"
+const inter = Inter({ subsets: ["latin"] })
 
 const Home = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
@@ -71,7 +72,7 @@ const Home = () => {
         <br />
         <h2 className="text-xl xl:text-5xl lg:text-3xl md:text-xl flex flex-row items-baseline md:items-start gap-2 md:gap-3">
           And I'm a
-          <span style={{ color: "#BCAB79" }}>
+          <span style={{ color: "#BCAB60" }}>
             {displayText}
             {/* Display the blinking cursor */}
             {cursorVisible && <span className="cursor">|</span>}
@@ -92,7 +93,7 @@ const Home = () => {
           onClick={handleDownload}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 1.2 }}
-          className={`border-2 font-medium rounded-lg hover:font-semibold border-clr2 p-5 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer tracking-wide w-full md:w-max`}
+          className={`border-2 font-medium rounded-lg hover:font-semibold border-clr2 p-5 text-clr3 hover:bg-clr3 hover:text-clr2 hover:border-clr3 cursor-pointer tracking-wide w-full md:w-max ${inter.className}`}
         >
           Download CV
         </motion.button>

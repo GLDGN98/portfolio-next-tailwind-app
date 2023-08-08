@@ -22,7 +22,7 @@ const MainApp = () => {
       </nav>
       {isLoading ? (
         <div className="flex justify-center items-center min-h-screen">
-          <RotateLoader color="#BCAB79" />
+          <RotateLoader color="#BCAB60" />
         </div>
       ) : (
         <>

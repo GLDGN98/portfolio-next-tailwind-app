@@ -9,7 +9,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #253031;
+    background-color: #193031;
     border-radius: 8px;
 }
 
@@ -31,7 +31,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #253031;
+    background-color: #193031;
     border-radius: 8px;
 }
 

@@ -12,10 +12,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        primary: "#253031",
+        primary: "#193031",
         clr1: "#8AB0AB",
         clr2: "#C6E0FF",
-        clr3: "#BCAB79",
+        clr3: "#BCAB60",
       },
     },
   },
