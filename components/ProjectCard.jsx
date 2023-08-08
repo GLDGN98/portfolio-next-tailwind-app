@@ -24,7 +24,7 @@ const ProjectCard = ({ desc, title, imgSrc }) => {
     >
       <div style={{ position: "relative" }}>
         <Image
-          src={`.${imgSrc}`}
+          src={imgSrc}
           width={400}
           height={230}
           className="rounded-xl"
