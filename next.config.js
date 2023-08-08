@@ -5,4 +5,5 @@ module.exports = {
   output: "export",
   assetPrefix:
     process.env.NODE_ENV === "production" ? "/portfolio-next-tailwind-app" : "",
+  basePath: "/portfolio-next-tailwind-app",
 }
