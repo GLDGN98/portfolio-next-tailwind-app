@@ -84,7 +84,7 @@ const Navbar = () => {
               }`}
               initial={false}
               animate={{
-                rotate: isMenuOpen ? 135 : -45,
+                rotate: isMenuOpen ? -45 : -45,
                 y: isMenuOpen ? 0 : 1,
                 x: isMenuOpen ? 2 : 7,
               }}
