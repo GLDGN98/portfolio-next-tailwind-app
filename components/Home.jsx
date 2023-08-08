@@ -80,7 +80,7 @@ const Home = () => {
         </h2>
 
         <br />
-        <p className="lg:text-2xl xl:text-3xl text-lg md:w-5/6">
+        <p className="lg:text-2xl text-lg md:w-5/6">
           Frontend Developer with strong problem-solving abilities and a passion
           for creating impactful web applications. Collaborative team player
           with excellent communication and software design pattern knowledge.
