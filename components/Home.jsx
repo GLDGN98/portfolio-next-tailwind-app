@@ -116,7 +116,7 @@ const Home = () => {
         >
           <ResponsiveImage
             className="bg-gradient-to-r from-clr1 to-clr2 rounded-full p-2 shadow-lg shadow-cyan-500/60"
-            src={`${prefix}/last-one-img.webp`}
+            src="/last-one-img.webp"
             width={458}
             height={600}
             alt="my-image"

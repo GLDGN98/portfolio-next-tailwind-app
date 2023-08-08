@@ -4,7 +4,7 @@ const ResponsiveImage = ({ src, width, height, alt, className }) => {
   return (
     <div>
       <Image
-        src={src}
+        src={`.${src}`}
         alt={alt}
         className={className}
         loading="lazy"
