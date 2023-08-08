@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import ProjectCard from "@/components/ProjectCard"
 import { Element } from "react-scroll"

@@ -31,7 +31,7 @@ const Home = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={isAnimated ? { y: 0, opacity: 1 } : {}}
         transition={{ duration: 1.5 }}
-        className="md:px-10 md:py-4 text-left text-clr2 tracking-wide"
+        className="text-left text-clr2 tracking-wide"
       >
         <h2 className="xl:text-5xl text-3xl">Hi there!</h2>
         <br />
