@@ -1,5 +1,5 @@
 "use client"
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { Inter } from "next/font/google"
 import { useInView } from "react-intersection-observer"
@@ -106,7 +106,6 @@ const Contact = () => {
                 id="grid-first-name"
                 type="text"
                 name="first_name"
-                placeholder="Eilon"
               />
             </div>
             <div className="w-full md:w-1/2 px-3">
@@ -121,7 +120,6 @@ const Contact = () => {
                 id="grid-last-name"
                 type="text"
                 name="last_name"
-                placeholder="Drori"
               />
             </div>
           </div>

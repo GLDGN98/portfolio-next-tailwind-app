@@ -38,34 +38,40 @@ const Projects = () => {
 
   const projectData = [
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-7-min.jpg",
+      title: "MrBitcoin",
+      desc: "Digital wallet app for keeping and transferring Bitcoins",
+      imgSrc: "./bitcoinVue.png",
+      url: "https://github.com/GLDGN98/MrBitcoin",
     },
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-2-min.jpg",
+      title: "Workflow",
+      desc: "List-making application, Trello clone",
+      imgSrc: "./Workflow.png",
+      url: "https://github.com/GLDGN98/Workflow-trello_clone",
     },
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-4-min.jpg",
+      title: "myteam",
+      desc: "Design challenge: Crafting user-centric solutions with innovation.",
+      imgSrc: "./myteam.png",
+      url: "https://github.com/GLDGN98/myteam-design",
     },
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-6-min.jpg",
+      title: "Football App",
+      desc: "Football app highlighting leagues, teams, and an interactive experience with customizable content administration.",
+      imgSrc: "./football-app2.png",
+      url: "https://github.com/GLDGN98/football-app",
     },
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-5-min.jpg",
+      title: "Blogin",
+      desc: "Design challenge: Crafting user-centric solutions with innovation",
+      imgSrc: "./Blogin.png",
+      url: "https://github.com/GLDGN98/Blogin",
     },
     {
-      title: "Web Design",
-      desc: "just a random for now",
-      imgSrc: "./coding-3-min.jpg",
+      title: "Meme Generator",
+      desc: "Meme Generator app – choose from a library of images, add witty captions, and share your creations.",
+      imgSrc: "./MemeGenerator.png",
+      url: "https://github.com/GLDGN98/meme-generator",
     },
   ]
 
@@ -91,6 +97,7 @@ const Projects = () => {
                 title={project.title}
                 desc={project.desc}
                 imgSrc={project.imgSrc}
+                url={project.url}
               />
             ))}
           </motion.ul>

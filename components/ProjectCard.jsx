@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import { Inter } from "@next/font/google"
+const inter = Inter({ subsets: ["latin"] })
 
-const ProjectCard = ({ desc, title, imgSrc }) => {
+const ProjectCard = ({ desc, title, imgSrc, url }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
@@ -37,8 +39,8 @@ const ProjectCard = ({ desc, title, imgSrc }) => {
           className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 text-white flex flex-col items-center justify-center gap-3 p-5"
         >
           <h2 className="text-lg font-bold">{title}</h2>
-          <p className="text-sm">{desc}</p>
-          <a href="#" className="text-clr3 hover:text-clr2 hover:underline">
+          <p className={`text-sm ${inter.className}`}>{desc}</p>
+          <a href={url} className="text-clr3 hover:text-clr2 hover:underline">
             View on GitHub
           </a>
         </motion.div>
