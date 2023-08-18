@@ -48,12 +48,12 @@ const Home = () => {
 
   const handleDownload = () => {
     // Replace the URL with the correct path to your PDF file
-    const fileURL = "/resume.pdf"
+    const fileURL = "./Gilad's Resume.pdf"
     // Create a link element
     const link = document.createElement("a")
     link.href = fileURL
     link.target = "_blank"
-    link.download = "resume.pdf" // Change the name of the downloaded file
+    link.download = "Gilad's Resume.pdf" // Change the name of the downloaded file
     // Simulate a click on the link to trigger the download
     link.click()
   }
