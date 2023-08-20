@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from "react"
 import { motion, useAnimation } from "framer-motion"
 import {
@@ -65,7 +66,7 @@ const Services = () => {
   ]
 
   return (
-    <div className="flex flex-col items-center justify-center text-clr2 mt-36 md:mt-0">
+    <div className="flex flex-col text-clr2 mt-36 md:mt-0">
       <motion.div
         className="text-center"
         initial={{ y: -100, opacity: 0 }}
@@ -76,13 +77,14 @@ const Services = () => {
         </h1>
       </motion.div>
       <div className="my-20" ref={servicesRef}>
-        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <ul className="flex flex-col xl:flex-row gap-10">
           {serviceData.map((service, index) => (
             <motion.li
               key={index}
               initial={{ y: 100, opacity: 0 }}
               animate={cardControls}
-              className="flex items-center"
+              className="flex flex-col gap-5"
+              style={{ flex: 1 }}
             >
               <ServiceCard
                 icon={service.icon}
