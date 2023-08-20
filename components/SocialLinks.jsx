@@ -24,25 +24,10 @@ const SocialLinks = () => {
   return (
     <ul className="flex align-center justify-center md:justify-normal gap-10 py-10">
       <SocialLink
-        href="https://www.facebook.com/gilad.dagan.9/"
-        label="Facebook"
-      >
-        <GrFacebookOption aria-hidden="true" />
-      </SocialLink>
-      <SocialLink
-        href="https://www.instagram.com/giladagan1/"
-        label="Instagram"
-      >
-        <GrInstagram aria-hidden="true" />
-      </SocialLink>
-      <SocialLink
         href="https://www.linkedin.com/in/gilad-dagan-21a856264/"
         label="LinkedIn"
       >
         <GrLinkedinOption aria-hidden="true" />
-      </SocialLink>
-      <SocialLink href="https://twitter.com/" label="Twitter">
-        <GrTwitter aria-hidden="true" />
       </SocialLink>
     </ul>
   )

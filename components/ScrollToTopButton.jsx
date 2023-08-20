@@ -7,7 +7,7 @@ const ScrollToTopButton = () => {
   const [showScrollToTop, setShowScrollToTop] = useState(false)
 
   const handleScroll = () => {
-    setShowScrollToTop(window.scrollY > 200) // Adjust the scrollY value as needed to control when the arrow appears
+    setShowScrollToTop(window.scrollY > 200) 
   }
 
   useEffect(() => {

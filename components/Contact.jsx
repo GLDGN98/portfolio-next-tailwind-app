@@ -3,21 +3,27 @@ import React, { useEffect, useState } from "react"
 import { motion, useAnimation } from "framer-motion"
 import { Inter } from "next/font/google"
 import { useInView } from "react-intersection-observer"
+import InputField from "@/components/InputField"
 
 const inter = Inter({ subsets: ["latin"] })
 
 const Contact = () => {
   const headerControls = useAnimation()
   const formControls = useAnimation()
-  const [isSubmitted, setIsSubmitted] = React.useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [formData, setFormData] = useState({
+    first_name: "",
+    last_name: "",
+    email: "",
+    message: "",
+  })
+  const [errors, setErrors] = useState({})
   const [contactWrapperRef, contactInView] = useInView({ triggerOnce: true })
 
   useEffect(() => {
-    // Hide the header and form initially
     headerControls.start({ y: -100, opacity: 0 })
     formControls.start({ y: 50, opacity: 0 })
 
-    // Trigger animation for the header and form when the component is in view
     if (contactInView) {
       headerControls.start({
         y: 0,
@@ -37,36 +43,53 @@ const Contact = () => {
     }
   }, [headerControls, formControls, contactInView])
 
+  const handleInputChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }))
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault()
-    const formData = new FormData(event.target)
-    formData.append("_replyto", formData.get("email")) // Add the email field as "_replyto"
-    const url = "https://formspree.io/f/xnqkjkvz" // Replace with your Formspree endpoint
+
+    const fieldErrors = {}
+    Object.keys(formData).forEach((fieldName) => {
+      if (!formData[fieldName]) {
+        fieldErrors[fieldName] = true
+      }
+    })
+
+    if (Object.keys(fieldErrors).length > 0) {
+      setErrors(fieldErrors)
+      return
+    }
+
+    const url = "https://formspree.io/f/xnqkjkvz"
 
     try {
       const response = await fetch(url, {
         method: "POST",
-        body: formData,
+        body: new FormData(event.target),
         headers: {
           Accept: "application/json",
         },
       })
 
       if (response.ok) {
-        // Handle successful form submission (e.g., show a success message)
         setIsSubmitted(true)
       } else {
-        // Handle failed form submission (e.g., show an error message)
-        console.error("Form submission failed!")
+        console.log("Form submission failed!")
       }
     } catch (error) {
-      console.error("Form submission error:", error)
+      console.log("Form submission error:", error)
     }
   }
 
   return (
     <div
-      className={`flex flex-col items-center justify-center ${inter.className} mt-16 md:mt-0`}
+      className={`flex flex-col items-center justify-center ${inter.className} mt-16 md:mt-0 relative`}
     >
       <motion.h1
         initial={{ y: -100, opacity: 0 }}
@@ -94,65 +117,46 @@ const Contact = () => {
           ref={contactWrapperRef}
         >
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-              <label
-                className="block uppercase tracking-wide text-clr1 text-xs font-bold mb-2"
-                htmlFor="grid-first-name"
-              >
-                First Name
-              </label>
-              <input
-                className="appearance-none block w-full bg-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                id="grid-first-name"
-                type="text"
-                name="first_name"
-              />
-            </div>
-            <div className="w-full md:w-1/2 px-3">
-              <label
-                className="block uppercase tracking-wide text-clr1 text-xs font-bold mb-2"
-                htmlFor="grid-last-name"
-              >
-                Last Name
-              </label>
-              <input
-                className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-last-name"
-                type="text"
-                name="last_name"
-              />
-            </div>
+            <InputField
+              id="grid-first-name"
+              label="First Name"
+              type="text"
+              name="first_name"
+              value={formData.first_name}
+              onChange={handleInputChange}
+              isError={errors.first_name}
+            />
+            <InputField
+              id="grid-last-name"
+              label="Last Name"
+              type="text"
+              name="last_name"
+              value={formData.last_name}
+              onChange={handleInputChange}
+              isError={errors.last_name}
+            />
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-clr1 text-xs font-bold mb-2"
-                htmlFor="email"
-              >
-                E-mail
-              </label>
-              <input
-                className="appearance-none block w-full bg-gray-200 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="email"
-                type="email"
-                name="email"
-              />
-            </div>
+            <InputField
+              id="email"
+              label="E-mail"
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleInputChange}
+              isError={errors.email}
+            />
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
-            <div className="w-full px-3">
-              <label
-                className="block uppercase tracking-wide text-clr1 text-xs font-bold mb-2"
-                htmlFor="message"
-              >
-                Message
-              </label>
-              <textarea
-                className="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
-                id="message"
-                name="message"
-              ></textarea>
-            </div>
+            <InputField
+              id="message"
+              label="Message"
+              type="textarea"
+              name="message"
+              value={formData.message}
+              onChange={handleInputChange}
+              isError={errors.message}
+            />
           </div>
           <div className="md:flex md:items-center">
             <div className="md:w-1/3">

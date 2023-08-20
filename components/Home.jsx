@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] })
 const Home = () => {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [displayText, setDisplayText] = useState("")
-  const [cursorVisible, setCursorVisible] = useState(true) // Track cursor visibility
+  const [cursorVisible, setCursorVisible] = useState(true) 
   const textOptions = [
     "Frontend Developer",
     "Fullstack Developer",
@@ -31,30 +31,26 @@ const Home = () => {
             setCurrentTextIndex(
               (prevIndex) => (prevIndex + 1) % textOptions.length
             )
-          }, 1000) // Delay before moving to the next text
+          }, 1000) 
         }
-      }, 200) // Speed of typewriter effect
+      }, 200)
     }
     return () => clearInterval(interval)
   }, [currentTextIndex, displayText])
 
-  // Toggle cursor visibility
   useEffect(() => {
     const cursorInterval = setInterval(() => {
       setCursorVisible((prev) => !prev)
-    }, 500) // Blink every 500ms
+    }, 500)
     return () => clearInterval(cursorInterval)
   }, [])
 
   const handleDownload = () => {
-    // Replace the URL with the correct path to your PDF file
-    const fileURL = "/resume.pdf"
-    // Create a link element
+    const fileURL = "/Gilad's Resume3.pdf"
     const link = document.createElement("a")
     link.href = fileURL
     link.target = "_blank"
-    link.download = "resume.pdf" // Change the name of the downloaded file
-    // Simulate a click on the link to trigger the download
+    link.download = "resume.pdf"
     link.click()
   }
 
@@ -74,7 +70,6 @@ const Home = () => {
           And I'm a
           <span style={{ color: "#BCAB60" }}>
             {displayText}
-            {/* Display the blinking cursor */}
             {cursorVisible && <span className="cursor">|</span>}
           </span>
         </h2>
@@ -105,14 +100,7 @@ const Home = () => {
         transition={{ duration: 1.5 }}
         className="md:w-full md:flex md:items-center md:justify-center mt-1"
       >
-        <motion.div
-          initial={{ y: -10 }}
-          animate={{ y: 10 }}
-          transition={{
-            repeat: Infinity,
-            duration: 2,
-            repeatType: "reverse",
-          }}
+        <div
           className="md:mt-0 mt-10"
         >
           <ResponsiveImage
@@ -122,7 +110,7 @@ const Home = () => {
             height={600}
             alt="my-image"
           />
-        </motion.div>
+        </div>
       </motion.div>
     </main>
   )

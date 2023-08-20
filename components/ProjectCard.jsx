@@ -32,10 +32,9 @@ const ProjectCard = ({ desc, title, imgSrc, url }) => {
           className="rounded-xl"
           alt="Project Image"
         />
-        {/* Overlay with hover effect */}
         <motion.div
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -100 }} // Animate the overlay based on the `isHovered` state
-          initial={{ opacity: 0, y: -100 }} // Initial state of the overlay
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -100 }} 
+          initial={{ opacity: 0, y: -100 }} 
           className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 text-white flex flex-col items-center justify-center gap-3 p-5"
         >
           <h2 className="text-lg font-bold">{title}</h2>

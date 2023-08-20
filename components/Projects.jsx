@@ -12,10 +12,8 @@ const Projects = () => {
   const [projectsRef, projectsInView] = useInView({ triggerOnce: true })
 
   useEffect(() => {
-    // Hide the header initially
     headerControls.start({ y: -100, opacity: 0 })
 
-    // Trigger animation for the header and cards when the projects section is in view
     if (projectsInView) {
       headerControls.start({
         y: 0,
@@ -30,7 +28,7 @@ const Projects = () => {
         opacity: 1,
         transition: {
           duration: 1,
-          delay: 0.5, // Add a slight delay to make the cards animation start after the header animation
+          delay: 0.5, 
         },
       })
     }

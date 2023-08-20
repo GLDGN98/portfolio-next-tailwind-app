@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react"
 import Home from "../components/Home"
 import Navbar from "@/components/Navbar"
-import ScrollToTopButton from "@/components/ScrollToTopButton" // Import the ScrollToTopButton component
+import ScrollToTopButton from "@/components/ScrollToTopButton" 
 import Services from "@/components/Services"
 import Projects from "@/components/Projects"
 import Contact from "@/components/Contact"
