@@ -83,7 +83,7 @@ const Services = () => {
               key={index}
               initial={{ y: 100, opacity: 0 }}
               animate={cardControls}
-              className="flex flex-col gap-5"
+              className="flex"
               style={{ flex: 1 }}
             >
               <ServiceCard

@@ -9,23 +9,21 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
     .filter((point) => point.trim() !== "")
 
   return (
-    <div className="flex-grow bg-slate-700 rounded-xl border-clr1 p-10 text-left flex flex-col items-center justify-between gap-5">
-      <i className="text-6xl text-clr1">
+    <div className="bg-slate-700 rounded-xl flex flex-col border-clr1 p-10">
+      <i className="text-6xl text-clr1 self-center">
         <Icon />
       </i>
-      <h2 className="text-3xl font-bold text-center text-clr3">{title}</h2>
-      <div
-        className={`${inter.className} flex flex-col items-start`}
-      >
+      <h2 className="text-3xl font-bold text-clr3 text-center p-5">{title}</h2>
+      <ul className={`${inter.className}`}>
         {bulletPoints.map((point, index) => (
-          <div key={index} className="flex items-center gap-2">
+          <div key={index}>
             <li className="relative">
               <div className="w-2 h-2 bg-clr3 rounded-full absolute -left-5 top-2"></div>
               {point}
             </li>
           </div>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }
