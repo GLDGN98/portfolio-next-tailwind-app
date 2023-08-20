@@ -50,7 +50,8 @@ const Home = () => {
     const link = document.createElement("a")
     link.href = fileURL
     link.target = "_blank"
-    link.download = "resume.pdf"
+    link.download = "Gilad's Resume.pdf" // Change the name of the downloaded file
+    // Simulate a click on the link to trigger the download
     link.click()
   }
 
