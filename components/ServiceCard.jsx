@@ -14,7 +14,9 @@ const ServiceCard = ({ icon: Icon, title, description }) => {
         <Icon />
       </i>
       <h2 className="text-3xl font-bold text-center text-clr3">{title}</h2>
-      <div className={`${inter.className} flex flex-col baseline xl:items-center`}>
+      <div
+        className={`${inter.className} flex flex-col items-start`}
+      >
         {bulletPoints.map((point, index) => (
           <div key={index} className="flex items-center gap-2">
             <li className="relative">
