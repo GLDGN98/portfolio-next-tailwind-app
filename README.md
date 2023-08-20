@@ -1,34 +1,41 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Portfolio Website
 
-## Getting Started
+## Description
 
-First, run the development server:
+My portfolio website showcases my skills, projects, and accomplishments as a web developer. It serves as a digital resume and a way for potential employers or collaborators to learn more about me and my work.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **About Me:** Learn about my background, skills, and experiences.
+- **Projects:** Explore a selection of my coding projects with descriptions and links.
+- **Contact:** Get in touch with me through the provided contact form or social media links.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Technologies Used
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- HTML
+- CSS
+- JavaScript
+- React
+- Next.js
+- Tailwind
+- Framer Motion (for animations)
+- Font Awesome (for icons)
 
-## Learn More
+## Installation and Usage
 
-To learn more about Next.js, take a look at the following resources:
+1. Clone the repository.
+2. Navigate to the project directory.
+3. Install dependencies using `npm install`.
+4. Start the development server using `npm start`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Contact
 
-## Deploy on Vercel
+For any inquiries or collaborations, feel free to reach out to me:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Email: your.email@example.com
+- LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/giladagan/)
+- Portfolio: [Your Portfolio Website](https://gldgn98.github.io/portfolio-next-tailwind-app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
