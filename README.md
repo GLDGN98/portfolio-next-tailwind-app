@@ -33,7 +33,6 @@ My portfolio website showcases my skills, projects, and accomplishments as a web
 
 For any inquiries or collaborations, feel free to reach out to me:
 
-- Email: your.email@example.com
 - LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/giladagan/)
 - Portfolio: [Your Portfolio Website](https://gldgn98.github.io/portfolio-next-tailwind-app/)
 
