@@ -46,7 +46,7 @@ const Home = () => {
   }, [])
 
   const handleDownload = () => {
-    const fileURL = "./Gilad's Resume3.pdf"
+    const fileURL = "/Gilad's Resume3.pdf"
     const link = document.createElement("a")
     link.href = fileURL
     link.target = "_blank"
