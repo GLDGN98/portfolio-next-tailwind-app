@@ -26,7 +26,7 @@ My portfolio website showcases my skills, projects, and accomplishments as a web
 1. Clone the repository.
 2. Navigate to the project directory.
 3. Install dependencies using `npm install`.
-4. Start the development server using `npm start`.
+4. Start the development server using `npm run dev`.
 
 
 ## Contact
@@ -34,7 +34,7 @@ My portfolio website showcases my skills, projects, and accomplishments as a web
 For any inquiries or collaborations, feel free to reach out to me:
 
 - LinkedIn: [My LinkedIn Profile](https://www.linkedin.com/in/giladagan/)
-- Portfolio: [My Portfolio Website](https://gldgn98.github.io/portfolio-next-tailwind-app/)
+- Portfolio: [My Portfolio Website](https://giladagan-portfolio.vercel.app/)
 
 
 
