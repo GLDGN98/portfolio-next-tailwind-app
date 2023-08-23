@@ -28,7 +28,7 @@ const Projects = () => {
         opacity: 1,
         transition: {
           duration: 1,
-          delay: 0.5, 
+          delay: 0.5,
         },
       })
     }
@@ -38,38 +38,44 @@ const Projects = () => {
     {
       title: "MrBitcoin",
       desc: "Digital wallet app for keeping and transferring Bitcoins",
-      img: "/bitcoinVue.png",
+      imgSrc: "/bitcoinVue.png",
       url: "https://github.com/GLDGN98/MrBitcoin",
+      appUrl: "",
     },
     {
       title: "Workflow",
       desc: "List-making application, Trello clone",
       imgSrc: "/Workflow.png",
       url: "https://github.com/GLDGN98/Workflow-trello_clone",
+      appUrl: "",
     },
     {
       title: "myteam",
       desc: "Design challenge: Crafting user-centric solutions with innovation.",
       imgSrc: "/myteam.png",
       url: "https://github.com/GLDGN98/myteam-design",
+      appUrl: "",
     },
     {
       title: "Football App",
       desc: "Football app highlighting leagues, teams, and an interactive experience with customizable content administration.",
       imgSrc: "/football-app2.png",
       url: "https://github.com/GLDGN98/football-app",
+      appUrl: "",
     },
     {
       title: "Blogin",
       desc: "Design challenge: Crafting user-centric solutions with innovation",
       imgSrc: "/Blogin.png",
       url: "https://github.com/GLDGN98/Blogin",
+      appUrl: "",
     },
     {
       title: "Meme Generator",
       desc: "Meme Generator app – choose from a library of images, add witty captions, and share your creations.",
       imgSrc: "/MemeGenerator.png",
       url: "https://github.com/GLDGN98/meme-generator",
+      appUrl: "",
     },
   ]
 
@@ -96,6 +102,7 @@ const Projects = () => {
                 desc={project.desc}
                 imgSrc={project.imgSrc}
                 url={project.url}
+                appUrl={project.appUrl}
               />
             ))}
           </motion.ul>

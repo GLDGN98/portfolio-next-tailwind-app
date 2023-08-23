@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Inter } from "@next/font/google"
 const inter = Inter({ subsets: ["latin"] })
 
-const ProjectCard = ({ desc, title, imgSrc, url }) => {
+const ProjectCard = ({ desc, title, imgSrc, url, appUrl }) => {
   const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseEnter = () => {
@@ -33,8 +33,8 @@ const ProjectCard = ({ desc, title, imgSrc, url }) => {
           alt="Project Image"
         />
         <motion.div
-          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -100 }} 
-          initial={{ opacity: 0, y: -100 }} 
+          animate={{ opacity: isHovered ? 1 : 0, y: isHovered ? 0 : -100 }}
+          initial={{ opacity: 0, y: -100 }}
           className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-70 text-white flex flex-col items-center justify-center gap-3 p-5"
         >
           <h2 className="text-lg font-bold">{title}</h2>
@@ -42,6 +42,14 @@ const ProjectCard = ({ desc, title, imgSrc, url }) => {
           <a href={url} className="text-clr3 hover:text-clr2 hover:underline">
             View on GitHub
           </a>
+          {appUrl && (
+            <a
+              href={appUrl}
+              className="text-clr3 hover:text-clr2 hover:underline"
+            >
+              Checkout the App
+            </a>
+          )}
         </motion.div>
       </div>
     </motion.div>
